@@ -1,3 +1,5 @@
+// Show current date -->
+
 function addZero(i) {
   if (i < 10) {
     i = "0" + i;
@@ -24,6 +26,8 @@ function formatDate() {
 const currentDate = document.querySelector("#date");
 currentDate.textContent = formatDate();
 
+// Show city accordingly to user input -->
+
 function showCity(e) {
   e.preventDefault();
   const input = document.querySelector("#city-input");
@@ -35,6 +39,8 @@ function showCity(e) {
 
 const form = document.querySelector("#city-form");
 form.addEventListener("submit", showCity);
+
+// Change temperature metrics -->
 
 const temp = document.querySelector("#temp");
 
