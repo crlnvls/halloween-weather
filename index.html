@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Butcherman&family=Creepster&family=Eater&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/styles.css" />
+  <script type="module" src="./assets/script.js" defer></script>
+  <title>Weather app</title>
+</head>
+
+<body>
+  <!-- <video src="./assets/img/istockphoto-1324529798-640_adpp_is.mp4" autoplay loop muted></video> -->
+  <div class="container">
+    <div class="size">
+      <form id="city-form">
+        <input type="text" placeholder="Enter your city..." class="input" id="city-input" autofocus required />
+        <button class="search-btn" type="submit">
+          <img src="./assets/img/magnifying-glass.png" alt="search ghost" class="img-btn" />
+        </button>
+        <button class="search-location">
+          <img src="./assets/img/location.png" alt="location icon" class="img-btn" />
+        </button>
+      </form>
+      <div class="info-container">
+        <div>
+          <h1 class="city" id="current-city">London</h1>
+          <h2 id="date">Sunday</h2>
+          <h2>Mostly cloudy</h2>
+        </div>
+        <div class="weather-info">
+          <img src="./assets/img/moon.png" alt="moon" class="weather-img" />
+          <div class="size-weather">
+            <div class="temp-info">
+              <h1 class="temp" id="temp">18</h1>
+              <a class="degree" id="link-c" href="#">°C |</a>
+              <a class="degree" id="link-f" href="#"> °F</a>
+            </div>
+            <div>
+              <h3>Precipitation: 1%</h3>
+              <h3>Humidity: 71%</h3>
+              <h3>Wind: 10 mph</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-weather">
+        <div class="card">
+          <h4>Mon</h4>
+          <img src="./assets/img/storm.png" alt="storm" class="card-img" />
+          <h5>26 / 17</h5>
+        </div>
+        <div class="card">
+          <h4>Mon</h4>
+          <img src="./assets/img/storm.png" class="card-img" alt="storm" />
+          <h5>26 / 17</h5>
+        </div>
+        <div class="card">
+          <h4>Mon</h4>
+          <img src="./assets/img/storm.png" class="card-img" alt="storm" />
+          <h5>26 / 17</h5>
+        </div>
+        <div class="card">
+          <h4>Mon</h4>
+          <img src="./assets/img/sun.png" class="card-img" alt="sun" />
+          <h5>26 / 17</h5>
+        </div>
+        <div class="card">
+          <h4>Mon</h4>
+          <img src="./assets/img/rain.png" class="card-img" alt="rain" />
+          <h5>26 / 17</h5>
+        </div>
+        <div class="card">
+          <h4>Mon</h4>
+          <img src="./assets/img/snow.png" class="card-img" alt="snow" />
+          <h5>26 / 17</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
