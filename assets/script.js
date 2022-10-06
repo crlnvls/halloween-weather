@@ -1,4 +1,4 @@
-// Show current date -->
+// Format date -->
 
 function addZero(i) {
   if (i < 10) {
@@ -27,6 +27,7 @@ function formatDate() {
 
 const key = "acb8cbc1cbebcc4544d2f68a7d215266";
 const locationKey = "49b631c45785fe73d2a88477803dea22";
+
 const currentDate = document.querySelector("#date");
 const input = document.querySelector("#city-input");
 const city = document.querySelector("#current-city");
