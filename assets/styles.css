@@ -97,7 +97,6 @@ h2 {
 
 .weather-info {
   display: flex;
-  margin-right: 10%;
   align-items: center;
   justify-content: center;
 }
