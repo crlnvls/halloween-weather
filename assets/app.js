@@ -71,16 +71,18 @@ function getInfo(res) {
 }
 
 async function getData(city) {
+  const error = document.querySelector("#error");
   const key = "f09d3949047ab6c9e3bcaf79cf61f619";
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${key}`;
 
   try {
     const res = await axios.get(url);
     console.log(res.data);
+    error.textContent = "";
     return getInfo(res.data);
   } catch (err) {
     console.log(err);
-    alert("Please enter a valid city");
+    error.textContent = "Please enter a valid city 👻";
   }
 }
 

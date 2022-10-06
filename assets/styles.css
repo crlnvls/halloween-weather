@@ -51,7 +51,7 @@ form {
 .input {
   width: 400px;
   height: 40px;
-  font-size: 20px;
+  font-size: 25px;
   font-family: "Creepster", cursive;
   border-radius: 5px;
   background-color: rgb(215, 215, 215);
@@ -80,6 +80,12 @@ form {
   display: flex;
   justify-content: space-between;
   margin-top: 50px;
+}
+
+#error {
+  font-family: "Creepster", cursive;
+  font-size: 25px;
+  color: rgb(131, 42, 42);
 }
 
 .header {
