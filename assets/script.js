@@ -38,6 +38,7 @@ const fahrenheit = document.querySelector("#link-f");
 const humid = document.querySelector("#humid");
 const wind = document.querySelector("#wind");
 const currentLocation = document.querySelector("#search-location");
+const BigIcon = document.querySelector(".weather-img");
 
 async function getData() {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${input.value}&units=metric&appid=${key}`;
@@ -61,7 +62,9 @@ async function getInfo(e) {
   const humidity = res["main"]["humidity"];
   const speedWind = Math.round(res["wind"]["speed"]);
   const date = res["dt"];
+  const icon = res["weather"][0]["icon"];
 
+  BigIcon.setAttribute("src", `./assets/img/${icon}.png`);
   currentDate.textContent = formatDate(date * 1000);
   currentTemp.textContent = temp;
   city.textContent = input.value;
@@ -109,7 +112,9 @@ async function handlePosition(position) {
     const humidity = res["main"]["humidity"];
     const speedWind = Math.round(res["wind"]["speed"]);
     const date = res["dt"];
+    const icon = res["weather"][0]["icon"];
 
+    BigIcon.setAttribute("src", `./assets/img/${icon}.png`);
     currentDate.textContent = formatDate(date * 1000);
     city.textContent = nameCity;
     currentTemp.textContent = temp;
