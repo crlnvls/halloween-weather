@@ -166,6 +166,20 @@ h5 {
   font-size: 15px;
 }
 
+p,
+.github {
+  font-family: "Creepster", cursive;
+  font-size: 20px;
+  color: rgb(111, 110, 110);
+  text-align: center;
+  margin: 0;
+}
+
+.github:hover {
+  color: rgb(215, 215, 215);
+  cursor: pointer;
+}
+
 @media (min-width: 850px) {
   .container {
     position: fixed;
