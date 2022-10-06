@@ -217,6 +217,10 @@ h5 {
   margin: 0;
 }
 
+.github {
+  text-decoration: underline;
+}
+
 .github:hover {
   color: rgb(206, 206, 206);
   text-shadow: 0 0 6px #ff5900, 0 0 6px #ff8c00;
