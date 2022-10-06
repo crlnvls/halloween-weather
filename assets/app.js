@@ -141,19 +141,21 @@ function handleForecast(res) {
   const forecast = res;
   let cardForecast = "";
 
-  forecast.map((d) => {
-    cardForecast =
-      cardForecast +
-      `<div class="card">
-            <h4>${formatDays(d.dt)}</h4>
-            <img src="./assets/img/${
-              d["weather"][0]["icon"]
-            }.png" alt="weather icon" class="card-img" />
-            <div class="min-max">
-              <h5>${Math.round(d["temp"]["max"])}°</h5>
-              <h5 class="min">${Math.round(d["temp"]["min"])}°</h5>
-            </div>
-          </div>`;
+  forecast.map((d, index) => {
+    if (index !== 0 && index !== 7) {
+      cardForecast =
+        cardForecast +
+        `<div class="card">
+              <h4>${formatDays(d.dt)}</h4>
+              <img src="./assets/img/${
+                d["weather"][0]["icon"]
+              }.png" alt="weather icon" class="card-img" />
+              <div class="min-max">
+                <h5>${Math.round(d["temp"]["max"])}°</h5>
+                <h5 class="min">${Math.round(d["temp"]["min"])}°</h5>
+              </div>
+            </div>`;
+    }
   });
 
   card.innerHTML = cardForecast;
@@ -164,8 +166,5 @@ form.addEventListener("submit", handleSubmit);
 
 const currentLocation = document.querySelector("#search-location");
 currentLocation.addEventListener("click", handleCurrentPosition);
-
-console.log(formatDate(166505400 * 1000));
-console.log(formatDate(1665088376 * 1000));
 
 getData("London");
