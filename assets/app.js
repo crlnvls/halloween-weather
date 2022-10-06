@@ -80,6 +80,7 @@ async function getData(city) {
     return getInfo(res.data);
   } catch (err) {
     console.log(err);
+    alert("Please enter a valid city");
   }
 }
 
