@@ -82,11 +82,20 @@ form {
   margin-top: 50px;
 }
 
+.header {
+  display: flex;
+}
+
+#country,
 .city {
   margin-top: 0;
   margin-bottom: 20px;
   font-size: 45px;
   font-family: "Creepster", cursive;
+}
+
+#country {
+  margin-left: 20px;
 }
 
 h2 {
@@ -102,7 +111,7 @@ h2 {
 }
 
 .weather-img {
-  width: 140px;
+  width: 120px;
   margin-right: 20px;
 }
 

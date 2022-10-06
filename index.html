@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Butcherman&family=Creepster&family=Eater&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="./assets/styles.css" />
-  <script type="module" src="./assets/script.js" defer></script>
+  <script type="module" src="./assets/app.js" defer></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <title>Weather app</title>
 </head>
@@ -32,22 +32,26 @@
       </div>
       <div class="info-container">
         <div>
-          <h1 class="city" id="current-city">London</h1>
-          <h2 id="date">Sunday</h2>
-          <h2 id="prevision">Mostly cloudy</h2>
+          <div class="header">
+            <h1 class="city" id="current-city">
+            </h1>
+            <h1 id="country">UK</h1>
+          </div>
+          <h2 id="date"></h2>
+          <h2 id="prevision"></h2>
         </div>
         <div class="weather-info">
-          <img src="./assets/img/01n.png" alt="weather icon" class="weather-img" />
+          <img src="" alt="weather icon" class="weather-img" />
           <div class="size-weather">
             <div class="temp-info">
-              <h1 class="temp" id="temp">18</h1>
+              <h1 class="temp" id="temp"></h1>
               <a class="degree" id="link-c" href="#">°C</a>
               <p>|</p>
               <a class="degree" id="link-f" href="#">°F</a>
             </div>
             <div>
-              <h3>Humidity: <span id="humid">71</span>%</h3>
-              <h3>Wind: <span id="wind">10</span> m/s</h3>
+              <h3>Humidity: <span id="humid"></span>%</h3>
+              <h3>Wind: <span id="wind"></span> m/s</h3>
             </div>
           </div>
         </div>
