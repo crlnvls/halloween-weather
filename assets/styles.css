@@ -162,7 +162,7 @@ a {
 
 a:hover {
   cursor: pointer;
-  color: black;
+  color: rgb(206, 206, 206);
   text-shadow: 0 0 6px #ff5900, 0 0 6px #ff8c00;
 }
 
@@ -218,7 +218,8 @@ h5 {
 }
 
 .github:hover {
-  color: rgb(215, 215, 215);
+  color: rgb(206, 206, 206);
+  text-shadow: 0 0 6px #ff5900, 0 0 6px #ff8c00;
   cursor: pointer;
 }
 
