@@ -1,4 +1,4 @@
-# Halloween Weather App 👻
+# 👻 Halloween Weather App 
 
 An app where users can search or add a current location to see a estimate of future weather conditions.
 
