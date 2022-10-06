@@ -28,16 +28,17 @@ function formatDate() {
 function getInfo(res) {
   const currentDate = document.querySelector("#date");
   const city = document.querySelector("#current-city");
+  const country = document.querySelector("#country");
   const prevision = document.querySelector("#prevision");
   const humid = document.querySelector("#humid");
   const wind = document.querySelector("#wind");
-
   const BigIcon = document.querySelector(".weather-img");
   const currentTemp = document.querySelector("#temp");
   const celsius = document.querySelector("#link-c");
   const fahrenheit = document.querySelector("#link-f");
 
   const nameCity = res["name"];
+  const nameCountry = res["sys"]["country"];
   const description = res["weather"][0]["description"];
   const humidity = res["main"]["humidity"];
   const speedWind = Math.round(res["wind"]["speed"]);
@@ -59,6 +60,7 @@ function getInfo(res) {
   currentDate.textContent = formatDate(date * 1000);
   currentTemp.textContent = temp;
   city.textContent = nameCity;
+  country.textContent = nameCountry;
   prevision.textContent = description;
   humid.textContent = humidity;
   wind.textContent = speedWind;
@@ -74,6 +76,7 @@ async function getData(city) {
 
   try {
     const res = await axios.get(url);
+    console.log(res.data);
     return getInfo(res.data);
   } catch (err) {
     console.log(err);
