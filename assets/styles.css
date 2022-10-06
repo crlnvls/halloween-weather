@@ -221,8 +221,7 @@ h5 {
   .weather-info {
     display: flex;
     margin-top: 50px;
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: 40px;
   }
 
   .weather-img {
