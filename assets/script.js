@@ -23,13 +23,11 @@ function formatDate() {
   )}`;
 }
 
-const currentDate = document.querySelector("#date");
-currentDate.textContent = formatDate();
-
 // Show city info accordingly to user input -->
 
 const key = "acb8cbc1cbebcc4544d2f68a7d215266";
 const locationKey = "49b631c45785fe73d2a88477803dea22";
+const currentDate = document.querySelector("#date");
 const input = document.querySelector("#city-input");
 const city = document.querySelector("#current-city");
 const currentTemp = document.querySelector("#temp");
@@ -55,12 +53,15 @@ async function getInfo(e) {
   e.preventDefault();
 
   const res = await getData();
+  console.log(res);
 
   const description = res["weather"][0]["description"];
   const temp = Math.round(res["main"]["temp"]);
   const humidity = res["main"]["humidity"];
   const speedWind = Math.round(res["wind"]["speed"]);
+  const date = res["dt"];
 
+  currentDate.textContent = formatDate(date * 1000);
   currentTemp.textContent = temp;
   city.textContent = input.value;
   input.value = "";
@@ -106,7 +107,9 @@ async function handlePosition(position) {
     const temp = Math.round(res["main"]["temp"]);
     const humidity = res["main"]["humidity"];
     const speedWind = Math.round(res["wind"]["speed"]);
+    const date = res["dt"];
 
+    currentDate.textContent = formatDate(date * 1000);
     city.textContent = nameCity;
     currentTemp.textContent = temp;
     prevision.textContent = description;
