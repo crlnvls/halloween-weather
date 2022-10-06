@@ -108,14 +108,34 @@ async function handleSubmit(e) {
   input.value = "";
 }
 
-function getCurrentPosition() {
+function handleCurrentPosition() {
   navigator.geolocation.getCurrentPosition(getPosition);
+}
+
+function getForecast() {
+  const card = document.querySelector("#forecast");
+
+  let cardForecast = "";
+  cardForecast =
+    cardForecast +
+    `<div class="card">
+          <h4>Mon</h4>
+          <img src="./assets/img/storm.png" alt="storm" class="card-img" />
+          <div class="min-max">
+            <h5>26 </h5>
+            <h5 class="divider">/</h5>
+            <h5>17</h5>
+          </div>
+        </div>`;
+
+  card.innerHTML = cardForecast;
 }
 
 const form = document.querySelector("#city-form");
 form.addEventListener("submit", handleSubmit);
 
 const currentLocation = document.querySelector("#search-location");
-currentLocation.addEventListener("click", getCurrentPosition);
+currentLocation.addEventListener("click", handleCurrentPosition);
 
+getForecast();
 getData("London");
