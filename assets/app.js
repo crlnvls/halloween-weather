@@ -74,7 +74,6 @@ async function getData(city) {
 
   try {
     const res = await axios.get(url);
-    console.log(res.data);
     return getInfo(res.data);
   } catch (err) {
     console.log(err);
