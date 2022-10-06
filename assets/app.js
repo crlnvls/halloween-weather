@@ -70,14 +70,13 @@ function getInfo(res) {
   fahrenheit.addEventListener("click", getFahrenheit);
 }
 
+const error = document.querySelector("#error");
 async function getData(city) {
-  const error = document.querySelector("#error");
   const key = "f09d3949047ab6c9e3bcaf79cf61f619";
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${key}`;
 
   try {
     const res = await axios.get(url);
-    console.log(res.data);
     error.textContent = "";
     return getInfo(res.data);
   } catch (err) {
@@ -94,9 +93,11 @@ async function getPosition(position) {
 
   try {
     const res = await axios.get(url);
+    error.textContent = "";
     return getInfo(res.data);
   } catch (err) {
     console.log(err);
+    error.textContent = "Something went wrong! Please try again later! 🎃";
   }
 }
 
