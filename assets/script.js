@@ -29,6 +29,7 @@ currentDate.textContent = formatDate();
 // Show city info accordingly to user input -->
 
 const key = "acb8cbc1cbebcc4544d2f68a7d215266";
+const locationKey = "49b631c45785fe73d2a88477803dea22";
 const input = document.querySelector("#city-input");
 const city = document.querySelector("#current-city");
 const currentTemp = document.querySelector("#temp");
@@ -94,7 +95,7 @@ form.addEventListener("submit", getInfo);
 async function handlePosition(position) {
   const lat = position.coords.latitude;
   const lon = position.coords.longitude;
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${key}`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${locationKey}`;
 
   try {
     const location = await axios.get(url);
