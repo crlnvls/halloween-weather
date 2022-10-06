@@ -16,4 +16,4 @@ This is app where user can search or add a current location to see a estimate of
 ### Usage
 
 - Search any city to see the weather forecast.
-- Click the `pumpkin button` to search your current location weather forecast.
+- Click the `pumpkin button` to search your current location weather.
