@@ -161,6 +161,10 @@ a:hover {
   color: rgb(215, 215, 215);
 }
 
+#link-c {
+  margin-left: 10px;
+}
+
 .card-weather {
   margin-top: 50px;
   display: flex;
