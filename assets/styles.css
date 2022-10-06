@@ -76,7 +76,7 @@ form {
 }
 
 .search-location:hover {
-  background-color: rgb(131, 42, 42);
+  background-color: #d76316;
   border-radius: 30px;
   cursor: pointer;
 }
@@ -102,6 +102,7 @@ form {
   margin-bottom: 20px;
   font-size: 45px;
   font-family: "Creepster", cursive;
+  color: rgb(228, 227, 227);
 }
 
 #country {
@@ -112,10 +113,8 @@ h2 {
   margin: 0;
   font-size: 27px;
   font-family: "Creepster", cursive;
-}
-
-#prevision {
-  color: rgb(131, 42, 42);
+  color: black;
+  text-shadow: 0 0 7px #ff5900, 0 0 7px #ff8c00;
 }
 
 .weather-info {
@@ -166,7 +165,8 @@ a {
 
 a:hover {
   cursor: pointer;
-  color: rgb(215, 215, 215);
+  color: black;
+  text-shadow: 0 0 6px #ff5900, 0 0 6px #ff8c00;
 }
 
 #link-c {
@@ -200,8 +200,10 @@ a:hover {
 }
 
 h4 {
-  font-size: 20px;
+  font-size: 25px;
   font-family: "Creepster", cursive;
+  color: black;
+  text-shadow: 0 0 6px #ff5900, 0 0 6px #ff8c00;
 }
 
 h5 {
