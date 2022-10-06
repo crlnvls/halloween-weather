@@ -11,6 +11,7 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="./assets/styles.css" />
   <script type="module" src="./assets/script.js" defer></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <title>Weather app</title>
 </head>
 
@@ -18,20 +19,22 @@
   <!-- <video src="./assets/img/istockphoto-1324529798-640_adpp_is.mp4" autoplay loop muted></video> -->
   <div class="container">
     <div class="size">
-      <form id="city-form">
-        <input type="text" placeholder="Enter your city..." class="input" id="city-input" autofocus required />
-        <button class="search-btn" type="submit">
-          <img src="./assets/img/magnifying-glass.png" alt="search ghost" class="img-btn" />
-        </button>
-        <button class="search-location">
+      <div class="align-btn">
+        <form id="city-form">
+          <input type="text" placeholder="Enter your city..." class="input" id="city-input" autofocus required />
+          <button class="search-btn" type="submit">
+            <img src="./assets/img/magnifying-glass.png" alt="search ghost" class="img-btn" />
+          </button>
+        </form>
+        <button class="search-location" id="search-location">
           <img src="./assets/img/location.png" alt="location icon" class="img-btn" />
         </button>
-      </form>
+      </div>
       <div class="info-container">
         <div>
           <h1 class="city" id="current-city">London</h1>
           <h2 id="date">Sunday</h2>
-          <h2>Mostly cloudy</h2>
+          <h2 id="prevision">Mostly cloudy</h2>
         </div>
         <div class="weather-info">
           <img src="./assets/img/moon.png" alt="moon" class="weather-img" />
@@ -42,9 +45,8 @@
               <a class="degree" id="link-f" href="#"> °F</a>
             </div>
             <div>
-              <h3>Precipitation: 1%</h3>
-              <h3>Humidity: 71%</h3>
-              <h3>Wind: 10 mph</h3>
+              <h3>Humidity: <span id="humid">71</span>%</h3>
+              <h3>Wind: <span id="wind">10</span> m/s</h3>
             </div>
           </div>
         </div>

@@ -26,38 +26,115 @@ function formatDate() {
 const currentDate = document.querySelector("#date");
 currentDate.textContent = formatDate();
 
-// Show city accordingly to user input -->
+// Show city info accordingly to user input -->
 
-function showCity(e) {
+const key = "acb8cbc1cbebcc4544d2f68a7d215266";
+const input = document.querySelector("#city-input");
+const city = document.querySelector("#current-city");
+const currentTemp = document.querySelector("#temp");
+const prevision = document.querySelector("#prevision");
+const celsius = document.querySelector("#link-c");
+const fahrenheit = document.querySelector("#link-f");
+const humid = document.querySelector("#humid");
+const wind = document.querySelector("#wind");
+const currentLocation = document.querySelector("#search-location");
+
+async function getData() {
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${input.value}&units=metric&appid=${key}`;
+
+  try {
+    const res = await axios.get(url);
+    return res.data;
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+async function getInfo(e) {
   e.preventDefault();
-  const input = document.querySelector("#city-input");
-  const city = document.querySelector("#current-city");
 
+  const res = await getData();
+
+  const description = res["weather"][0]["description"];
+  const temp = Math.round(res["main"]["temp"]);
+  const humidity = res["main"]["humidity"];
+  const speedWind = Math.round(res["wind"]["speed"]);
+
+  currentTemp.textContent = temp;
   city.textContent = input.value;
   input.value = "";
+  prevision.textContent = description;
+  humid.textContent = humidity;
+  wind.textContent = speedWind;
+
+  // Change temperature metrics -->
+
+  function getCelsius() {
+    const temp = Math.round(res["main"]["temp"]);
+
+    currentTemp.textContent = temp;
+  }
+
+  function getFahrenheit() {
+    const temp = Math.round(res["main"]["temp"]);
+    const tempF = Math.round((temp * 9) / 5 + 32);
+
+    currentTemp.textContent = tempF;
+  }
+
+  celsius.addEventListener("click", getCelsius);
+  fahrenheit.addEventListener("click", getFahrenheit);
 }
 
 const form = document.querySelector("#city-form");
-form.addEventListener("submit", showCity);
+form.addEventListener("submit", getInfo);
 
-// Change temperature metrics -->
+// Handle current location of user -->
 
-const temp = document.querySelector("#temp");
+async function handlePosition(position) {
+  const lat = position.coords.latitude;
+  const lon = position.coords.longitude;
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${key}`;
 
-function getFahrenheit(e) {
-  e.preventDefault();
-  const fahrenheitTemperature = Math.round((18 * 9) / 5 + 32);
-  temp.textContent = fahrenheitTemperature;
+  try {
+    const location = await axios.get(url);
+    const res = location.data;
+
+    const nameCity = res["name"];
+    const description = res["weather"][0]["description"];
+    const temp = Math.round(res["main"]["temp"]);
+    const humidity = res["main"]["humidity"];
+    const speedWind = Math.round(res["wind"]["speed"]);
+
+    city.textContent = nameCity;
+    currentTemp.textContent = temp;
+    prevision.textContent = description;
+    humid.textContent = humidity;
+    wind.textContent = speedWind;
+
+    // Change temperature metrics -->
+
+    function getCelsius() {
+      const temp = Math.round(res["main"]["temp"]);
+
+      currentTemp.textContent = temp;
+    }
+
+    function getFahrenheit() {
+      const temp = Math.round(res["main"]["temp"]);
+      const tempF = Math.round((temp * 9) / 5 + 32);
+
+      currentTemp.textContent = tempF;
+    }
+
+    celsius.addEventListener("click", getCelsius);
+    fahrenheit.addEventListener("click", getFahrenheit);
+  } catch (err) {
+    console.log(err);
+  }
 }
 
-function getCelsius(e) {
-  e.preventDefault();
-  const celsiusTemperature = Math.round(18);
-  temp.textContent = celsiusTemperature;
+function getCurrentPosition() {
+  navigator.geolocation.getCurrentPosition(handlePosition);
 }
-
-const fahrenheit = document.querySelector("#link-f");
-const celsius = document.querySelector("#link-c");
-
-fahrenheit.addEventListener("click", getFahrenheit);
-celsius.addEventListener("click", getCelsius);
+currentLocation.addEventListener("click", getCurrentPosition);

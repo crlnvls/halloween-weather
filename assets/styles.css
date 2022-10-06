@@ -36,6 +36,12 @@ video {
   border-radius: 15px;
 }
 
+.align-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 form {
   display: flex;
   align-items: center;
@@ -63,16 +69,11 @@ form {
   background-color: rgb(215, 215, 215);
 }
 
-.search-location:hover {
-  background-color: #fff;
-  border-radius: 30px;
-  cursor: pointer;
-}
-
+.search-location:hover,
 .search-btn:hover {
   background-color: #fff;
-  cursor: pointer;
   border-radius: 30px;
+  cursor: pointer;
 }
 
 .info-container {
@@ -97,10 +98,12 @@ h2 {
 .weather-info {
   display: flex;
   margin-right: 10%;
+  align-items: center;
+  justify-content: center;
 }
 
 .weather-img {
-  width: 130px;
+  width: 140px;
   margin-right: 20px;
 }
 
@@ -114,14 +117,14 @@ h2 {
 }
 
 .temp {
-  font-size: 45px;
+  font-size: 70px;
   margin-top: 0;
   margin-bottom: 20px;
 }
 
 h3 {
   margin: 0;
-  font-size: 15px;
+  font-size: 17px;
   color: rgb(111, 110, 110);
 }
 
@@ -129,7 +132,7 @@ a {
   color: rgb(111, 110, 110);
   margin-top: 0;
   font-family: "Creepster", cursive;
-  font-size: 25px;
+  font-size: 30px;
   text-decoration: none;
 }
 
@@ -224,8 +227,7 @@ h5 {
   }
 
   .weather-img {
-    width: 100px;
-    height: 120px;
+    width: 140px;
   }
 
   .size-weather {
@@ -240,12 +242,11 @@ h5 {
   }
 
   .temp {
-    font-size: 40px;
+    font-size: 60px;
   }
 
   h3 {
     margin: 0;
-    font-size: 15px;
   }
 
   .card-weather {
