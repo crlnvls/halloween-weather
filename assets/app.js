@@ -1,4 +1,4 @@
-// Format date -->
+// Format date and days-->
 
 function formatDate() {
   const date = new Date();
@@ -21,6 +21,13 @@ function formatDate() {
   return `${days[date.getDay()]} ${addZero(date.getHours())}:${addZero(
     date.getMinutes()
   )}`;
+}
+
+function formatDays(time) {
+  const date = new Date(time * 1000);
+  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDay()];
 }
 
 // Show city info accordingly to user input -->
@@ -59,7 +66,7 @@ function getInfo(res) {
 
   currentDate.textContent = formatDate(date * 1000);
   currentTemp.textContent = temp;
-  city.textContent = nameCity;
+  city.textContent = nameCity + ",";
   country.textContent = nameCountry;
   prevision.textContent = description;
   humid.textContent = humidity;
@@ -68,6 +75,8 @@ function getInfo(res) {
 
   celsius.addEventListener("click", getCelsius);
   fahrenheit.addEventListener("click", getFahrenheit);
+
+  getForecast(res["coord"]);
 }
 
 const error = document.querySelector("#error");
@@ -112,21 +121,40 @@ function handleCurrentPosition() {
   navigator.geolocation.getCurrentPosition(getPosition);
 }
 
-function getForecast() {
-  const card = document.querySelector("#forecast");
+async function getForecast(coord) {
+  const key = "c819171fe0abdc14039af4ef5dda283b";
+  const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${coord.lat}&lon=${coord.lon}&appid=${key}&units=metric`;
 
+  try {
+    const res = await axios.get(url);
+    console.log(res.data.daily);
+    error.textContent = "";
+    return handleForecast(res.data.daily);
+  } catch (err) {
+    console.log(err);
+    error.textContent = "Something went wrong! Please try again later! 🎃";
+  }
+}
+
+function handleForecast(res) {
+  const card = document.querySelector("#forecast");
+  const forecast = res;
   let cardForecast = "";
-  cardForecast =
-    cardForecast +
-    `<div class="card">
-          <h4>Mon</h4>
-          <img src="./assets/img/storm.png" alt="storm" class="card-img" />
-          <div class="min-max">
-            <h5>26 </h5>
-            <h5 class="divider">/</h5>
-            <h5>17</h5>
-          </div>
-        </div>`;
+
+  forecast.map((d) => {
+    cardForecast =
+      cardForecast +
+      `<div class="card">
+            <h4>${formatDays(d.dt)}</h4>
+            <img src="./assets/img/${
+              d["weather"][0]["icon"]
+            }.png" alt="weather icon" class="card-img" />
+            <div class="min-max">
+              <h5>${Math.round(d["temp"]["max"])}°</h5>
+              <h5 class="min">${Math.round(d["temp"]["min"])}°</h5>
+            </div>
+          </div>`;
+  });
 
   card.innerHTML = cardForecast;
 }
@@ -137,5 +165,7 @@ form.addEventListener("submit", handleSubmit);
 const currentLocation = document.querySelector("#search-location");
 currentLocation.addEventListener("click", handleCurrentPosition);
 
-getForecast();
+console.log(formatDate(166505400 * 1000));
+console.log(formatDate(1665088376 * 1000));
+
 getData("London");
