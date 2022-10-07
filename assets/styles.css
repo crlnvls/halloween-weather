@@ -61,6 +61,11 @@ form {
   width: 50px;
 }
 
+.mobile-btn {
+  display: flex;
+  flex-direction: row;
+}
+
 .search-btn,
 .search-location {
   border: solid rgba(0, 0, 0, 0.894) 1px;
