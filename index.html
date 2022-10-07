@@ -23,50 +23,52 @@
       <div class="align-btn">
         <form id="city-form">
           <input type="text" placeholder="Enter your city..." class="input" id="city-input" autofocus required />
-          <button class="search-btn" type="submit">
-            <img src="./assets/img/magnifying-glass.png" alt="search ghost" class="img-btn" />
-          </button>
+          <div class="mobile-btn">
+            <button class="search-btn" type="submit">
+              <img src="./assets/img/magnifying-glass.png" alt="search ghost" class="img-btn" />
+            </button>
         </form>
         <button class="search-location" id="search-location">
           <img src="./assets/img/location.png" alt="location icon" class="img-btn" />
         </button>
       </div>
-      <span id="error"></span>
-      <div class="info-container">
-        <div>
-          <div class="header">
-            <h1 class="city" id="current-city">
-            </h1>
-            <h1 id="country"></h1>
-          </div>
-          <h2 id="date"></h2>
-          <h2 id="prevision"></h2>
-        </div>
-        <div class="weather-info">
-          <img src="" alt="weather icon" class="weather-img" />
-          <div class="size-weather">
-            <div class="temp-info">
-              <h1 class="temp" id="temp"></h1>
-              <a class="degree" id="link-c" href="#">°C</a>
-              <p>|</p>
-              <a class="degree" id="link-f" href="#">°F</a>
-            </div>
-            <div>
-              <h3>Humidity: <span id="humid"></span>%</h3>
-              <h3>Wind: <span id="wind"></span> m/s</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card-weather" id="forecast">
-      </div>
-      <footer>
-        <p class="footer">
-          Copyright Ⓒ <a class="github" href="https://github.com/crlnvls/halloween-weather" target="_blank">Halloween
-            Weather</a>
-        </p>
-      </footer>
     </div>
+    <span id="error"></span>
+    <div class="info-container">
+      <div>
+        <div class="header">
+          <h1 class="city" id="current-city">
+          </h1>
+          <h1 id="country"></h1>
+        </div>
+        <h2 id="date"></h2>
+        <h2 id="prevision"></h2>
+      </div>
+      <div class="weather-info">
+        <img src="" alt="weather icon" class="weather-img" />
+        <div class="size-weather">
+          <div class="temp-info">
+            <h1 class="temp" id="temp"></h1>
+            <a class="degree" id="link-c" href="#">°C</a>
+            <p>|</p>
+            <a class="degree" id="link-f" href="#">°F</a>
+          </div>
+          <div>
+            <h3>Humidity: <span id="humid"></span>%</h3>
+            <h3>Wind: <span id="wind"></span> m/s</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-weather" id="forecast">
+    </div>
+    <footer>
+      <p class="footer">
+        Copyright Ⓒ <a class="github" href="https://github.com/crlnvls/halloween-weather" target="_blank">Halloween
+          Weather</a>
+      </p>
+    </footer>
+  </div>
 
   </div>
 </body>
