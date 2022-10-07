@@ -100,7 +100,7 @@ form {
 .city {
   margin-top: 0;
   margin-bottom: 20px;
-  font-size: 45px;
+  font-size: 50px;
   font-family: "Creepster", cursive;
   color: rgb(206, 206, 206);
 }
@@ -111,7 +111,7 @@ form {
 
 h2 {
   margin: 0;
-  font-size: 27px;
+  font-size: 30px;
   font-family: "Creepster", cursive;
   color: black;
   text-shadow: 0 0 7px #ff5900, 0 0 7px #ff8c00;
@@ -256,13 +256,19 @@ h5 {
 
   .input {
     width: 190px;
-    height: 50px;
+    height: 40px;
     border-radius: 5px;
     padding-left: 10px;
   }
 
   .img-btn {
     width: 50px;
+  }
+
+  .search-btn,
+  .search-location {
+    border-radius: 50px;
+    margin-left: 3px;
   }
 
   .info-container {
@@ -275,7 +281,6 @@ h5 {
   .city {
     margin-top: 0;
     margin-bottom: 5px;
-    font-size: 45px;
     text-align: center;
   }
 
