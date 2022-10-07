@@ -152,7 +152,7 @@ h2 {
 h3 {
   margin: 0;
   font-size: 17px;
-  color: rgb(111, 110, 110);
+  color: rgb(126, 126, 126);
 }
 
 p {
@@ -162,7 +162,7 @@ p {
 
 p,
 a {
-  color: rgb(111, 110, 110);
+  color: rgb(126, 126, 126);
   margin-top: 0;
   font-family: "Creepster", cursive;
   font-size: 30px;
@@ -193,7 +193,7 @@ a:hover {
 }
 
 .card-img {
-  width: 50px;
+  width: 55px;
 }
 
 .min-max {
@@ -201,19 +201,19 @@ a:hover {
 }
 
 h4 {
-  font-size: 25px;
+  font-size: 27px;
   font-family: "Creepster", cursive;
   color: black;
   text-shadow: 0 0 6px #ff5900, 0 0 6px #ff8c00;
 }
 
 h5 {
-  font-size: 20px;
+  font-size: 22px;
   color: rgb(206, 206, 206);
 }
 
 .min {
-  color: rgb(111, 110, 110);
+  color: rgb(152, 151, 151);
   margin-left: 5px;
 }
 
