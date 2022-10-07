@@ -167,4 +167,6 @@ form.addEventListener("submit", handleSubmit);
 const currentLocation = document.querySelector("#search-location");
 currentLocation.addEventListener("click", handleCurrentPosition);
 
+document.querySelector("video").playbackRate = 0.6;
+
 getData("London");
