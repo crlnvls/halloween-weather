@@ -80,6 +80,7 @@ function getInfo(res) {
 }
 
 const error = document.querySelector("#error");
+
 async function getData(city) {
   const key = "f09d3949047ab6c9e3bcaf79cf61f619";
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${key}`;
@@ -112,17 +113,6 @@ async function getPosition(position) {
   }
 }
 
-async function handleSubmit(e) {
-  e.preventDefault();
-  const input = document.querySelector("#city-input");
-  await getData(input.value);
-  input.value = "";
-}
-
-function handleCurrentPosition() {
-  navigator.geolocation.getCurrentPosition(getPosition);
-}
-
 async function getForecast(coord) {
   const key = "c819171fe0abdc14039af4ef5dda283b";
   const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${coord.lat}&lon=${coord.lon}&appid=${key}&units=metric`;
@@ -136,6 +126,17 @@ async function getForecast(coord) {
     console.log(err);
     error.textContent = "Something went wrong! Please try again later! 🎃";
   }
+}
+
+async function handleSubmit(e) {
+  e.preventDefault();
+  const input = document.querySelector("#city-input");
+  await getData(input.value);
+  input.value = "";
+}
+
+function handleCurrentPosition() {
+  navigator.geolocation.getCurrentPosition(getPosition);
 }
 
 function handleForecast(res) {
