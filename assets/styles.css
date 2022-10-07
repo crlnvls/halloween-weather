@@ -131,6 +131,7 @@ h2 {
 .weather-img {
   width: 120px;
   margin-right: 20px;
+  margin-top: 50px;
 }
 
 .size-weather {
@@ -205,6 +206,8 @@ h4 {
   font-family: "Creepster", cursive;
   color: black;
   text-shadow: 0 0 6px #ff5900, 0 0 6px #ff8c00;
+  margin-bottom: 30px;
+  margin-top: 0;
 }
 
 h5 {
@@ -314,6 +317,7 @@ h5 {
 
   .weather-img {
     width: 140px;
+    margin-top: 30px;
   }
 
   .size-weather {
