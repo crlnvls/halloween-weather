@@ -265,6 +265,7 @@ h5 {
   .size {
     border: solid 1px black;
     padding: 0px;
+    padding-top: 30px;
   }
 
   .input {
