@@ -1,4 +1,4 @@
-video {
+.background {
   object-fit: cover;
   position: fixed;
   top: 0;
@@ -8,8 +8,12 @@ video {
   max-width: 100%;
 }
 
+body {
+  background-color: black;
+}
+
 @media (max-aspect-ratio: 16/9) {
-  video {
+  .background {
     object-fit: cover;
     position: fixed;
     top: 0;
@@ -237,7 +241,7 @@ h5 {
 }
 
 @media (max-width: 850px) {
-  video {
+  .background {
     display: none;
   }
 
@@ -252,13 +256,13 @@ h5 {
 
   .input {
     width: 190px;
-    height: 30px;
+    height: 50px;
     border-radius: 5px;
     padding-left: 10px;
   }
 
   .img-btn {
-    width: 40px;
+    width: 50px;
   }
 
   .info-container {
