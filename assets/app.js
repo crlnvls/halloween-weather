@@ -85,9 +85,10 @@ async function getData(city) {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${key}`;
 
   try {
-    const res = await axios.get(url);
+    const res = await fetch(url);
+    const data = await res.json();
     error.textContent = "";
-    return getInfo(res.data);
+    getInfo(data);
   } catch (err) {
     console.log(err);
     error.textContent = "Please enter a valid city 👻";
@@ -101,9 +102,10 @@ async function getPosition(position) {
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${key}`;
 
   try {
-    const res = await axios.get(url);
+    const res = await fetch(url);
+    const data = await res.json();
     error.textContent = "";
-    return getInfo(res.data);
+    getInfo(data);
   } catch (err) {
     console.log(err);
     error.textContent = "Something went wrong! Please try again later! 🎃";
@@ -126,10 +128,10 @@ async function getForecast(coord) {
   const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${coord.lat}&lon=${coord.lon}&appid=${key}&units=metric`;
 
   try {
-    const res = await axios.get(url);
-    console.log(res.data.daily);
+    const res = await fetch(url);
+    const data = await res.json();
     error.textContent = "";
-    return handleForecast(res.data.daily);
+    handleForecast(data.daily);
   } catch (err) {
     console.log(err);
     error.textContent = "Something went wrong! Please try again later! 🎃";
