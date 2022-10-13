@@ -18,4 +18,4 @@ Demo: [https://halloween-weather.netlify.app](https://halloween-weather.netlify.
 ### Usage
 
 - Search any city to see the weather forecast.
-- Click the `pumpkin button` to search your current location.
+- Click the `pumpkin button` to search the weather of your current location.
