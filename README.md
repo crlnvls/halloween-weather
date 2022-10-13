@@ -1,6 +1,6 @@
 # 👻 Halloween Weather App 
 
-An app where users can search or add current location to see a estimate of future weather conditions.
+An app where users can search or add their current location to see a estimate of future weather conditions.
 
 Demo: [https://halloween-weather.netlify.app](https://halloween-weather.netlify.app)
 
